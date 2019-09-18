@@ -1,0 +1,2480 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.theesportslov.org/eSports-ontology#"
+     xml:base="http://www.theesportslov.org/eSports-ontology"
+     xmlns:eSports-ontology="http://www.theesportslov.org/eSports-ontology#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:provenance="http://www.bbc.co.uk/ontologies/provenance/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:VideoGameOntology="http://purl.org/net/VideoGameOntology#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:sport="http://www.bbc.co.uk/ontologies/sport/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://www.theesportslov.org/eSports-ontology">
+        <owl:versionIRI rdf:resource="http://www.theesportslov.org/eSports-ontology/0.1"/>
+        <owl:imports rdf:resource="http://purl.org/net/VideoGameOntology"/>
+        <dc:description xml:lang="en">The eSports Ontology is an ontology for the description of eSports and related events. The main purpose for this ontology is to get organized data about different eSports (associated game description), its players and events. The eSports Ontology was also designed to store everything in a eSport match or an tournament that could be of interest to eSports betting.
+Namespace is eSport: &lt;http://www.theesportslov.org/eSports-ontology&gt;</dc:description>
+        <dc:title xml:lang="en">e-Sports Ontology</dc:title>
+        <rdfs:label xml:lang="en">eSportOntology</rdfs:label>
+        <dc:creator>Ana Álvarez Suárez &amp; Gonzalo Mier Muñoz</dc:creator>
+        <terms:license xml:lang="en">Copyright 2017 Ana Álvarez Suárez &amp; Gonzalo Mier Muñoz
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</terms:license>
+        <terms:license xml:lang="es">Copyright (c) 2017 Ana Álvarez Suárez y Gonzalo Mier Muñoz
+
+Por la presente se autoriza, de forma gratuita, a cualquier persona que haya obtenido una copia de este software y archivos de documentación asociados (el &quot;Software&quot;), a utilizar el Software sin restricción, incluyendo sin limitación los derechos de usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar, y/o vender copias de este Software, y permitir lo mismo a las personas a las que se les proporcione el Software, de acuerdo con las siguientes condiciones:
+
+El aviso de copyright anterior y este aviso de permiso tendrán que ser incluidos en todas las copias o partes sustanciales del Software.
+
+EL SOFTWARE SE ENTREGA &quot;TAL CUAL&quot;, SIN GARANTÍA DE NINGÚN TIPO, YA SEA EXPRESA O IMPLÍCITA, INCLUYENDO, A MODO ENUNCIATIVO, CUALQUIER GARANTÍA DE COMERCIABILIDAD, IDONEIDAD PARA UN FIN PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS AUTORES O TITULARES DEL COPYRIGHT INCLUIDOS EN ESTE AVISO SERÁN RESPONSABLES DE NINGUNA rECLAMACIÓN, DAÑOS U OTRAS RESPONSABILIDADES, YA SEA EN UN LITIGIO, AGRAVIO O DE OTRO MODO, RESULTANTES DE O EN CONEXION CON EL SOFTWARE, SU USO U OTRO TIPO DE ACCIONES EN EL SOFTWARE.</terms:license>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/NET/c4dm/event.owl#subEvent -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/NET/c4dm/event.owl#subEvent">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#megaEvent"/>
+        <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <rdfs:label>event:subEvent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/isPartOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/net/VideoGameOntology#isEventInSession -->
+
+    <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#isEventInSession">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#hasInstantaneousEvent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#achievedByTeam -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#achievedByTeam">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#eventAchieved"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#GameEvent"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Team"/>
+        <rdfs:comment>eSport:achievedByTeam define which eSport:Team make a vgo:GameEvent</rdfs:comment>
+        <rdfs:label>achievedByTeam</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#areGameStatsOfPlayer -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#areGameStatsOfPlayer">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#hasGameStats"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#PlayerGameStats"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation"/>
+        <rdfs:comment xml:lang="en">eSport:areGameStatsOfPlayer is the stats of a player.</rdfs:comment>
+        <rdfs:label xml:lang="en">areGameStatsOfPlayer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#eventAchieved -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#eventAchieved">
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Team"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#GameEvent"/>
+        <rdfs:comment xml:lang="en">eSport:eventAchieved defines which vgo:GameEvent has been achieved by eSport:Team.</rdfs:comment>
+        <rdfs:label>eventAchieved</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#fromWhichESport -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#fromWhichESport">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#hasEvent"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#eSportsEvent"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#eSport"/>
+        <rdfs:comment xml:lang="en">eSport:isFromESport property defines from which eSport is an event.</rdfs:comment>
+        <rdfs:label xml:lang="en">isFromESport</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#hasAssociatedPlayerRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#hasAssociatedPlayerRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#isPlayerRoleinLane"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Lane"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#PlayerRole"/>
+        <rdfs:comment xml:lang="en">eSport:hasAssociatedPlayerRole property defines which eSport:PlayerRole is related with an eSport:Lane.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasAssociatedPlayerRole</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#hasAvailablePlayerRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#hasAvailablePlayerRole">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#isPlayerRoleIn"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#Game"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#PlayerRole"/>
+        <rdfs:comment xml:lang="en">eSport:hasAvailablePlayerRole property defines which eSport:PlayerRole could be played in a vgo:Game</rdfs:comment>
+        <rdfs:label>hasAvailablePlayerRole</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#hasCharacterPlayerRelationItem -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#hasCharacterPlayerRelationItem">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#isItemInCharacterPlayerRelation"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+        <rdfs:comment xml:lang="en">eSport:hasCharacterPlayerRelationItem property defines which vgo:Item use the eSport:CharacterPlayerRelation</rdfs:comment>
+        <rdfs:label xml:lang="en">hasCharacterPlayerRelationItem</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#hasEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#hasEvent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#eSport"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#eSportsEvent"/>
+        <rdfs:comment xml:lang="en">eSport:hasEvent property defines which events has some eSport.</rdfs:comment>
+        <rdfs:label>hasEvent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#hasGameStats -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#hasGameStats">
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#PlayerGameStats"/>
+        <rdfs:comment xml:lang="en">eSport:hasGameStats property defines the eSport:PlayerGameStats of a player in a game.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasGameStats</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#hasInstantaneousEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#hasInstantaneousEvent">
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#Session"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#InstantaneousEvent"/>
+        <rdfs:comment xml:lang="en">eSport:hasInstantaneousEvent property defines which vgo:InstantaneousEvent has a vgo:Session.</rdfs:comment>
+        <rdfs:label xml:lang="en">hasInstantaneousEvent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#hasNext -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#hasNext">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>Our eSport:hasNext defines if something has another somethin after it in the same sequence of events</rdfs:comment>
+        <rdfs:label>hasNext</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#hasNextGame -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#hasNextGame">
+        <rdfs:subPropertyOf rdf:resource="http://www.theesportslov.org/eSports-ontology#hasNext"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Game"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Game"/>
+        <rdfs:comment>Our eSport:hasNextGame defines if a eSport:Game has another eSport:Game after it in the same series of the eSport:Match</rdfs:comment>
+        <rdfs:label>hasNextGame</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#hasNextRound -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#hasNextRound">
+        <rdfs:subPropertyOf rdf:resource="http://www.theesportslov.org/eSports-ontology#hasNext"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Round"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Round"/>
+        <rdfs:comment>Our eSport:hasNextRound defines if a eSport:Round has another eSport:Round after it in the same series of the eSport:Stage</rdfs:comment>
+        <rdfs:label>hasNextRound</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#hasNextStage -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#hasNextStage">
+        <rdfs:subPropertyOf rdf:resource="http://www.theesportslov.org/eSports-ontology#hasNext"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Stage"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Stage"/>
+        <rdfs:comment>Our eSport:hasNextStage defines if a eSport:Stage has another eSport:Stage after it in the same series of the eSport:Tournament</rdfs:comment>
+        <rdfs:label>hasNextStage</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#hasPart">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#isPartOfMap"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Map"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Lane"/>
+        <rdfs:comment xml:lang="en">eSport:hasLane property defines the eSport:Lane/s a eSport:Map have.</rdfs:comment>
+        <rdfs:label>hasLane</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#hasPlayerRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#hasPlayerRole">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#isPlayerRoleOfPlayer"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#PlayerRole"/>
+        <rdfs:comment xml:lang="en">eSport:hasPlayerRole property defines which eSport:PlayerRole has a vgo:Player.</rdfs:comment>
+        <rdfs:label>hasPlayerRole</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#hasSessionPlayingArea -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#hasSessionPlayingArea">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#isPlayingAreaInSession"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#Session"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#PlayingArea"/>
+        <rdfs:comment xml:lang="en">eSport:hasSessionPlayingArea property defines in which vgo:PlayingArea is a vgo:Session played</rdfs:comment>
+        <rdfs:label xml:lang="en">hasSessionPlayingArea</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#has_ChampionRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#has_ChampionRole">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#isChampionRoleOf"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#ChampionRole"/>
+        <rdfs:comment xml:lang="en">eSport:hasChampionRole property defines which eSport:Role has the eSport:ChampionRole</rdfs:comment>
+        <rdfs:label>hasChampionRole</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#has_map -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#has_map">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#isMapOf"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#Game"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Map"/>
+        <rdfs:comment xml:lang="en">eSport:hasMap property defines which eSport:Map has a vgo:Game.</rdfs:comment>
+        <rdfs:label>hasMap</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#involvesCharacter -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#involvesCharacter">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#isCharacterIn"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#Character"/>
+        <rdfs:comment xml:lang="en">eSport:involvesCharacter property defines which vgo:Character is from a eSport:CharacterPlayerRelation.</rdfs:comment>
+        <rdfs:label xml:lang="en">involvesCharacterInRelation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#involvesCharacterPlayerRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#involvesCharacterPlayerRelation">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#isCharacterPlayerRelationIn"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#Session"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation"/>
+        <rdfs:comment xml:lang="en">eSport:involvesCharacterPlayerRelation property defines which eSport:CharacterPlayerRelation is in a vgo:Session.</rdfs:comment>
+        <rdfs:label xml:lang="en">involvesCharacterPlayerRelation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#involvesPlayer -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#involvesPlayer">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#isPlayerIn"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <rdfs:comment xml:lang="en">eSport:involvesPlayer property defines which eSport:CharacterPlayerRelation has a vgo:Player .</rdfs:comment>
+        <rdfs:label xml:lang="en">involvesPlayerInRelation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#involvesTeam -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#involvesTeam">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#isTeamIn"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Game"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Team"/>
+        <rdfs:comment xml:lang="en">eSport:involvesTeam property defines which eSport:Team plays the eSport:Game.</rdfs:comment>
+        <rdfs:label xml:lang="en">involvesTeam</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#involvesTeamHome -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#involvesTeamHome">
+        <rdfs:subPropertyOf rdf:resource="http://www.theesportslov.org/eSports-ontology#involvesTeam"/>
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#isTeamHomeIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Game"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Team"/>
+        <rdfs:comment xml:lang="en">eSport:involvesTeamHome property defines which eSport:Team plays the eSport:Game at home.</rdfs:comment>
+        <rdfs:label xml:lang="en">involvesTeamHome</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#involvesTeamVisitor -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#involvesTeamVisitor">
+        <rdfs:subPropertyOf rdf:resource="http://www.theesportslov.org/eSports-ontology#involvesTeam"/>
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#isTeamVisitorIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Game"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Team"/>
+        <rdfs:comment xml:lang="en">eSport:involvesTeamVisitor property defines what eSport:Team plays in a eSport:Game as a visitor.</rdfs:comment>
+        <rdfs:label xml:lang="en">involvesTeamVisitor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isAssociatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isAssociatedTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Game"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#Session"/>
+        <rdfs:comment xml:lang="en">eSport:isAssociatedTo property defines which vgo:Session correspond with the eSport:Game.</rdfs:comment>
+        <rdfs:label xml:lang="en">isAssociatedTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isChampionRoleOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isChampionRoleOf">
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#ChampionRole"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+        <rdfs:comment xml:lang="en">eSport:isChampionRoleOf property defines which eSport:Role is being played by the eSport:ChampionRole</rdfs:comment>
+        <rdfs:label xml:lang="en">isChampionRoleOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isCharacterIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isCharacterIn">
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#Character"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation"/>
+        <rdfs:comment xml:lang="en">eSport:isCharacterIn property defines which eSport:CharacterPlayerRelation is related with the vgo:Character.</rdfs:comment>
+        <rdfs:label xml:lang="en">isCharacterIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isCharacterPlayerRelationIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isCharacterPlayerRelationIn">
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#Session"/>
+        <rdfs:comment xml:lang="en">eSport:isCharacterPlayerRelationIn property defines in which vgo:Session is defined a eSport:CharacterPlayerRelation.</rdfs:comment>
+        <rdfs:label xml:lang="en">isCharacterPlayerRelationIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isESport -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isESport">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#playingGame"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#Game"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#eSport"/>
+        <rdfs:comment xml:lang="en">eSport:isESport property defines which eSport:ESport correspond to a vgo:Game.</rdfs:comment>
+        <rdfs:label xml:lang="en">isESport</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isFormedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isFormedBy">
+        <owl:inverseOf rdf:resource="http://www.theesportslov.org/eSports-ontology#partOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">eSport:isFormedBy property defines for which owl:Thing are formed other owl:Thing.</rdfs:comment>
+        <rdfs:label xml:lang="en">isFormedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isItemInCharacterPlayerRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isItemInCharacterPlayerRelation">
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation"/>
+        <rdfs:comment xml:lang="en">eSport:isItemInCharacterPlayerRelation property defines which eSport:CharacterPlayerRelation has used the vgo:Item.</rdfs:comment>
+        <rdfs:label xml:lang="en">isItemInCharacterPlayerRelation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isMapOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isMapOf">
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Map"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#Game"/>
+        <rdfs:comment xml:lang="en">eSport:isMapOf property defines which vgo:Game is played with the eSport:Map.</rdfs:comment>
+        <rdfs:label xml:lang="en">isMapOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isPartOfMap -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isPartOfMap">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/isPartOf"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Lane"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Map"/>
+        <rdfs:comment xml:lang="en">eSport:isPartOfMap property especifies which lane belongs to a map.</rdfs:comment>
+        <rdfs:label xml:lang="en">isPartOfMap</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isPlayerIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isPlayerIn">
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation"/>
+        <rdfs:comment xml:lang="en">eSport:isPlayerIn property defines which vgo:Player is in a eSport:CharacterPlayerRelation.</rdfs:comment>
+        <rdfs:label xml:lang="en">isPlayerIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isPlayerRoleIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isPlayerRoleIn">
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#PlayerRole"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#Game"/>
+        <rdfs:comment xml:lang="en">eSport:isPlayerRoleIn property defines in which vgo:Game it could be played the eSport:PlayerRole</rdfs:comment>
+        <rdfs:label xml:lang="en">isPlayerRoleIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isPlayerRoleOfPlayer -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isPlayerRoleOfPlayer">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#PlayerRole"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <rdfs:comment xml:lang="en">eSport:isPlayerRoleOfPlayer property defines in which eSport:PlayerRole is a vgo:Player playing</rdfs:comment>
+        <rdfs:label xml:lang="en">isPlayerRoleOfPlayer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isPlayerRoleinLane -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isPlayerRoleinLane">
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#PlayerRole"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Lane"/>
+        <rdfs:comment>eSport:isPlayerRoleinLane associates a eSport:PlayerRole with the eSport:Lane in which it is played, a constant relation.</rdfs:comment>
+        <rdfs:label xml:lang="en">isPlayerRoleInLane</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isPlayingAreaInSession -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isPlayingAreaInSession">
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#PlayingArea"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#Session"/>
+        <rdfs:comment xml:lang="en">eSport:isPlayingAreaInSession property defines in which vgo:Session is a vgo:PlayingArea played.</rdfs:comment>
+        <rdfs:label xml:lang="en">isPlayingAreaInSession</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isTeamHomeIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isTeamHomeIn">
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Team"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Game"/>
+        <rdfs:comment xml:lang="en">eSport:isTeamHomeIn property defines in which vgo:Game a eSport:Team is at home.</rdfs:comment>
+        <rdfs:label xml:lang="en">isTeamHomeIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isTeamIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isTeamIn">
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Team"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Game"/>
+        <rdfs:comment xml:lang="en">eSport:isTeamIn property defines in which vgo:Game plays a eSport:Team.</rdfs:comment>
+        <rdfs:label xml:lang="en">isTeamIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#isTeamVisitorIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#isTeamVisitorIn">
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#Team"/>
+        <rdfs:range rdf:resource="http://www.theesportslov.org/eSports-ontology#Game"/>
+        <rdfs:comment xml:lang="en">eSport:isTeamVisitorIn property defines in which vgo:Game a eSport:Team is the visitor</rdfs:comment>
+        <rdfs:label xml:lang="en">isTeamVisitorIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#megaEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#megaEvent">
+        <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <rdfs:comment xml:lang="en">eSport:megaEvent property defines an upper level event:Event.</rdfs:comment>
+        <rdfs:label>superEvent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#partOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#partOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">eSport:partOf property defines for which parts is formed a owl:Thing.</rdfs:comment>
+        <rdfs:label xml:lang="en">partOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#playingGame -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#playingGame">
+        <rdfs:domain rdf:resource="http://www.theesportslov.org/eSports-ontology#eSport"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#Game"/>
+        <rdfs:comment xml:lang="en">eSport:playingGame property defines a vgo:Game from an eSport:eSport</rdfs:comment>
+        <rdfs:label xml:lang="en">playingGame</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#wasBornIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.theesportslov.org/eSports-ontology#wasBornIn">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/PopulatedPlace"/>
+        <rdfs:comment>eSport:wasBornIn property defines where a player was birth at.</rdfs:comment>
+        <rdfs:label xml:lang="en">wasBornIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasBeginning -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#hasBeginning">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:label>time:hasBeginning</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasEnd -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#hasEnd">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:label>time:hasEnd</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasSessionLeaderboard -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#hasSessionLeaderboard">
+        <owl:inverseOf rdf:resource="http://www.w3.org/2006/time#isLeaderboardinSession"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#Session"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#Leaderboard"/>
+        <rdfs:comment>The eSport:hasSessionLeaderboard property associates a vgo:Session with it corresponding vgo:Leaderboard</rdfs:comment>
+        <rdfs:label>hasSessionLeaderboard</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#isLeaderboardinSession -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#isLeaderboardinSession">
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#Leaderboard"/>
+        <rdfs:range rdf:resource="http://purl.org/net/VideoGameOntology#Session"/>
+        <rdfs:comment xml:lang="en">eSport:isLeaderboardInSession property defines which vgo:Session correspond to the vgo:Leaderboard.</rdfs:comment>
+        <rdfs:label xml:lang="en">isLeaderboardInSession</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/knows -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/knows">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/net/VideoGameOntology#eventTime -->
+
+    <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#eventTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/net/VideoGameOntology#releaseDate -->
+
+    <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#releaseDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/net/VideoGameOntology#startTime -->
+
+    <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#startTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#kdaRatio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theesportslov.org/eSports-ontology#kdaRatio">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">eSport:kdaRatio are the average of Kills/Defeats/Assists of a vgo:Player</rdfs:comment>
+        <rdfs:label xml:lang="en">kdaRatio</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasGameKDA -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#hasGameKDA">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#PlayerGameStats"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">eSport:hasGameKDA are the Kills/Defeats/Assists of a vgo:Player in a eSport:Game</rdfs:comment>
+        <rdfs:label xml:lang="en">hasGameKDA</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#inXSDDateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#inXSDDateTime">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label>time:inXSDDateTime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/age -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/age">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/birthday -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/birthday">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Sport -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Sport">
+        <owl:equivalentClass rdf:resource="http://schema.org/sport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/NET/c4dm/event.owl#Event -->
+
+    <owl:Class rdf:about="http://purl.org/NET/c4dm/event.owl#Event">
+        <rdfs:label>event:Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/VideoGameOntology#Character -->
+
+    <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#Character">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#NonPlayableCharacter"/>
+                    <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#Playable_Character"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/net/VideoGameOntology#GainEvent -->
+
+    <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#GainEvent">
+        <owl:disjointWith rdf:resource="http://purl.org/net/VideoGameOntology#LoseEvent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/net/VideoGameOntology#LoseEvent -->
+
+    <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#LoseEvent"/>
+    
+
+
+    <!-- http://purl.org/net/VideoGameOntology#Player -->
+
+    <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#Player">
+        <owl:disjointWith rdf:resource="http://www.w3.org/2006/time#Trainer"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.org/sport -->
+
+    <owl:Class rdf:about="http://schema.org/sport"/>
+    
+
+
+    <!-- http://www.bbc.co.uk/ontologies/sport/Match -->
+
+    <owl:Class rdf:about="http://www.bbc.co.uk/ontologies/sport/Match">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#eSportsEvent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theesportslov.org/eSports-ontology#partOf"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#Round"/>
+                            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#Stage"/>
+                            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#Tournament"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An eSport:Match defines an encounter between two different teams in which at the end they have to either win, tie or lose. A few matches between different teams constitute an eSport:Round and they are formed by a series of eSport:Game (s). For example, a Fnatic vs Origin, Best of 5 match, in the 2nd round of the Group Phase of World Championship of LOL.</rdfs:comment>
+        <rdfs:label xml:lang="en">Match</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Bo1Match -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Bo1Match">
+        <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/sport/Match"/>
+        <rdfs:comment>An eSport:Bo1Match (Bo1 as in Best of 1) is a kind of eSport:Match in which the Team that wins the most out of that number of games wins.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bo1Match</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Bo3Match -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Bo3Match">
+        <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/sport/Match"/>
+        <rdfs:comment>An eSport:Bo3Match (Bo3 as in Best of 3) is a kind of eSport:Match in which the Team that wins the most out of that number of games wins.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bo3Match</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Bo5Match -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Bo5Match">
+        <rdfs:subClassOf rdf:resource="http://www.bbc.co.uk/ontologies/sport/Match"/>
+        <rdfs:comment>An eSport:Bo5Match (Bo5 as in Best of 5) is a kind of eSport:Match in which the Team that wins the most out of that number of games wins.</rdfs:comment>
+        <rdfs:label xml:lang="en">Bo5Match</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Champion -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Champion">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#Playable_Character"/>
+        <rdfs:comment xml:lang="en">An eSport:Champion is the character controlled by the player in a tower defence game.</rdfs:comment>
+        <rdfs:label xml:lang="en">Champion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#ChampionRole -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#ChampionRole">
+        <rdfs:comment xml:lang="en">The eSport:ChampionRole class describes the strategy of fighting followed by a player. An example of eSport:ChampionRole could be fighter or tank</rdfs:comment>
+        <rdfs:label xml:lang="en">ChampionRole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation">
+        <rdfs:comment>An eSport:CharacterPlayerRelation in a relation between a Player and the Character that plays in a Session so that they are stored together.</rdfs:comment>
+        <rdfs:label>CharacterPlayerRelation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#EliminationBracket -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#EliminationBracket">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#Stage"/>
+        <rdfs:comment>A eSport:EliminationBracket is a kind of eSport:Stage that is at its core a tree structure in which the competitors compete and eliminate half of the participating competitors at each round of the tree.</rdfs:comment>
+        <rdfs:label xml:lang="en">EliminationBracket</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Enemies -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Enemies">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#NonPlayableCharacter"/>
+        <owl:disjointWith rdf:resource="http://www.theesportslov.org/eSports-ontology#Friends"/>
+        <rdfs:label xml:lang="en">Enemies</rdfs:label>
+        <rdfs:label xml:lang="en">The eSport:Enemies are characters which want the main character lose the game. An enemy could be a playable or a non-playable character.</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Friends -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Friends">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#NonPlayableCharacter"/>
+        <rdfs:comment xml:lang="en">The eSport:Friends are characters which want the main character win the game. A friend could be a playable or a non-playable character.</rdfs:comment>
+        <rdfs:label xml:lang="en">Friends</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Game -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Game">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#eSportsEvent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theesportslov.org/eSports-ontology#partOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.theesportslov.org/eSports-ontology#eSportsEvent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theesportslov.org/eSports-ontology#involvesTeamHome"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.theesportslov.org/eSports-ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theesportslov.org/eSports-ontology#involvesTeamVisitor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.theesportslov.org/eSports-ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theesportslov.org/eSports-ontology#isAssociatedTo"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/net/VideoGameOntology#Session"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A eSport:Game is the smallest unit of eSPort:Tournament. It is a session from the eSport associated vgo:Game in which two teams fight and there has to be one Team that wins and another Team that loses.  For example, Game 1/5 in a Fnatic vs Origin, Best of 5 match, in the 2nd round of the Group Phase of World Championship of LOL.</rdfs:comment>
+        <rdfs:label>Game</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#GroupBracket -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#GroupBracket">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#Stage"/>
+        <rdfs:comment>eSport:GroupBracket is the most common eSport:Stage type and means that the rounds are played in a round robin or swiss format.</rdfs:comment>
+        <rdfs:label xml:lang="en">GroupBracket</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Lane -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Lane">
+        <rdfs:comment xml:lang="en">The eSport:Lane class  describes the main paths that minions follow in the course of a game. The lanes could be top, middle or bottom. Lanes are defended by turrets, and in order to push the enemy into their base, each successive turret in a lane must be destroyed before damage can be dealt to the next structure.</rdfs:comment>
+        <rdfs:label xml:lang="en">Lane</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#League -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#League">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#Tournament"/>
+        <rdfs:comment>An eSport:League is a kind of eSport:Tournament that last for a long time and is played at least annually in a region that decides the best teams of that region.</rdfs:comment>
+        <rdfs:label xml:lang="en">League</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Map -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Map">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/VideoGameOntology#PlayingArea"/>
+        <rdfs:comment xml:lang="en">An eSport:Map is the terrain in which the game is played.</rdfs:comment>
+        <rdfs:label xml:lang="en">Map</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Map1v1 -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Map1v1">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#Map"/>
+        <rdfs:comment xml:lang="en">An eSport:Map_1v1 is a map in which there are only one character in each team.</rdfs:comment>
+        <rdfs:label xml:lang="en">Map1v1</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Map3v3 -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Map3v3">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#Map"/>
+        <rdfs:comment xml:lang="en">An eSport:Map_3v3 is a map in which there are three characters in each team.</rdfs:comment>
+        <rdfs:label xml:lang="en">Map3v3</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Map5v5 -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Map5v5">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#Map"/>
+        <rdfs:comment xml:lang="en">An eSport:Map_5v5 is a map in which there are five characters in each team.</rdfs:comment>
+        <rdfs:label xml:lang="en">Map5v5</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Minions -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Minions">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#Enemies"/>
+        <owl:disjointWith rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+        <rdfs:comment xml:lang="en">The eSport:Minions are non-playable characters which helps a team to win the game.  The minions have movement down the lane. The minions could be friends or enemies.</rdfs:comment>
+        <rdfs:label xml:lang="en">Minions</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Monsters -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Monsters">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#Enemies"/>
+        <rdfs:comment xml:lang="en">The eSport:Monsters are non-playable character which don&apos;t have much movement and have no team. The monsters only fight when they are attacked. If any monsters die, the player who kills it gain a bonus.</rdfs:comment>
+        <rdfs:label xml:lang="en">Monsters</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#NonPlayableCharacter -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#NonPlayableCharacter">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/VideoGameOntology#Character"/>
+        <owl:disjointWith rdf:resource="http://www.theesportslov.org/eSports-ontology#Playable_Character"/>
+        <rdfs:comment xml:lang="en">A eSport:NonPlayableCharacter is any character which cannot be controlled. An example could be a car or a non-controllable human-like creature.</rdfs:comment>
+        <rdfs:label xml:lang="en">NonPlayableCharacter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Playable_Character -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Playable_Character">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/VideoGameOntology#Character"/>
+        <rdfs:comment xml:lang="en">An eSport:PlayableCharacter is any character which can be controlled. An example could be a champion or a fighter.</rdfs:comment>
+        <rdfs:label xml:lang="en">PlayableCharacter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#PlayerRole -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#PlayerRole">
+        <rdfs:comment xml:lang="en">The eSport:PlayerRole is the lane in which the player focus their activity.</rdfs:comment>
+        <rdfs:label xml:lang="en">PlayerRole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Round -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Round">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#eSportsEvent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theesportslov.org/eSports-ontology#partOf"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#Stage"/>
+                            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#Tournament"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An eSports:Round is each of the rounds in which an eSports:Stage is divided to.  Usually numbered and in order, they group matches that happen in some time interval and place in the brackets. For example, the 2nd round of the Group Phase of World Championship of LOL.</rdfs:comment>
+        <rdfs:label xml:lang="en">Round</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Stage -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Stage">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#eSportsEvent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theesportslov.org/eSports-ontology#partOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.theesportslov.org/eSports-ontology#Tournament"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An eSport:Stage is one of the stages or phases in which an eSport:Tournament is divided that are defined by a particular way of organizing brackets. Eg: the group phase at the beginning of every League of Legends World Championship.</rdfs:comment>
+        <rdfs:label xml:lang="en">Stage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Team -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Team">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theesportslov.org/eSports-ontology#partOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.theesportslov.org/eSports-ontology#eSportsClub"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A eSport:Team is a group of players which play together in the same eSport.</rdfs:comment>
+        <rdfs:label xml:lang="en">Team</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Tournament -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#Tournament">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#eSportsEvent"/>
+        <rdfs:comment>An eSports:Tournament is a competitive event related to eSports in which a Team or a Player becomes winner. For example: in League of Legends, World Championship or Mid-Season Invitational Tournament.</rdfs:comment>
+        <rdfs:label xml:lang="en">Tournament</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#eSport -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#eSport">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Sport"/>
+        <rdfs:comment>eSport:ESport is an electronic game in which player use Internet to make competitions. Examples of eSport:ESport are League Of Legends or Heroes Of The Storm</rdfs:comment>
+        <rdfs:label xml:lang="en">ESport</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#eSportsClub -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#eSportsClub">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:comment xml:lang="en">An eSport:eSportClub is an organization related to eSports. An eSportClub could have one or more teams and play in one or more eSports.</rdfs:comment>
+        <rdfs:label xml:lang="en">eSportClub</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#eSportsEvent -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#eSportsEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <rdfs:comment>An eSport:eSportsEvent is any event related to eSports, specially competitions.</rdfs:comment>
+        <rdfs:label xml:lang="en">eSportsEvent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#lastGame -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#lastGame">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#Game"/>
+        <rdfs:comment>The eSport:lastGame points to the last eSport:Game that is played out of the series of games in a eSport:Match.</rdfs:comment>
+        <rdfs:label xml:lang="en">lastGame</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#lastRound -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#lastRound">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#Round"/>
+        <rdfs:comment>The eSport:lastRound points to the last eSport:Round that happen in a eSport:Stage.</rdfs:comment>
+        <rdfs:label xml:lang="en">lastRound</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#lastStage -->
+
+    <owl:Class rdf:about="http://www.theesportslov.org/eSports-ontology#lastStage">
+        <rdfs:subClassOf rdf:resource="http://www.theesportslov.org/eSports-ontology#Stage"/>
+        <rdfs:comment>The eSport:lastStage points to the last eSport:Stage that is played out of all the stages in an eSport:Tournament.</rdfs:comment>
+        <rdfs:label xml:lang="en">lastStage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#Instant">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:label>time:Instant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#PlayerGameStats -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#PlayerGameStats">
+        <rdfs:comment>eSport:PlayerGameStats are the stats of Kills/Defeats/Assists of a vgo:Player in a eSport:Game.</rdfs:comment>
+        <rdfs:label>PlayerGameStats</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#ProperInterval -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#ProperInterval">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:label>time:ProperInterval</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TemporalEntity -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity">
+        <rdfs:label>time:TemporalEntity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Trainer -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#Trainer">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment>eSport Trainer is a member of a eSport:Team which helps players become better players, things game strategies and so on.</rdfs:comment>
+        <rdfs:label>Trainer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Group -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Group">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theesportslov.org/eSports-ontology#partOf"/>
+                <owl:allValuesFrom rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Organization -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Organization">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theesportslov.org/eSports-ontology#partOf"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group"/>
+                            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#ADCarry -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#ADCarry">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#PlayerRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Abyss -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Abyss">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Map5v5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#AbyssalScepter -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#AbyssalScepter">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Alarak -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Alarak">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Amazing -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Amazing">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <VideoGameOntology:playsGame rdf:resource="http://www.theesportslov.org/eSports-ontology#LeagueOfLegends"/>
+        <hasPlayerRole rdf:resource="http://www.theesportslov.org/eSports-ontology#Jungler"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#OrigenLOL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#AmplifyingTome -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#AmplifyingTome">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Amumu -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Amumu">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#AncientCoin -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#AncientCoin">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#AncientKrug -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#AncientKrug">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Ashe -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Ashe">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Auriel -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Auriel">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Azir -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Azir">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#BannerOfCommand -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#BannerOfCommand">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#BaronNashor -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#BaronNashor">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#BattlefieldOfEternity -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#BattlefieldOfEternity">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Map5v5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#BlastingWand -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#BlastingWand">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#BlueSentinel -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#BlueSentinel">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#BoneGolem -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#BoneGolem">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#BootsOfMobility -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#BootsOfMobility">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#BootsOfSpeed -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#BootsOfSpeed">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Bottom -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Bottom">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Lane"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#BraxisHoldout -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#BraxisHoldout">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Map5v5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#CasterMinion -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#CasterMinion">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Minions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Catapults -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Catapults">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Minions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#ChainVest -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#ChainVest">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Chen -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Chen">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#CorruptingPotion -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#CorruptingPotion">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Cull -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Cull">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#CursedHollow -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#CursedHollow">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Map5v5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Dagger -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Dagger">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Dragon -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Dragon">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#DragonShire -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#DragonShire">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Map5v5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Elise -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Elise">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#EssenceReaver -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#EssenceReaver">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Ezreal -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Ezreal">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+        <has_ChampionRole rdf:resource="http://www.theesportslov.org/eSports-ontology#Marksman"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Febiven -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Febiven">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <VideoGameOntology:playsGame rdf:resource="http://www.theesportslov.org/eSports-ontology#LeagueOfLegends"/>
+        <hasPlayerRole rdf:resource="http://www.theesportslov.org/eSports-ontology#Midlaner"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#FnaticLOL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#FiendishCodex -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#FiendishCodex">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Fighter -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Fighter">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#ChampionRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Flora -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Flora">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Fnatic -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Fnatic">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#eSportsClub"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#FnaticLOL -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#FnaticLOL">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Team"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#Fnatic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#FnaticVsOrigenLCS2015 -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#FnaticVsOrigenLCS2015">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Bo1Match"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#LCS2015FirstRound"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#FnaticVsOrigen_LCS2015_01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#FnaticVsOrigen_LCS2015_01">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Game"/>
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#lastGame"/>
+        <isAssociatedTo rdf:resource="http://www.theesportslov.org/eSports-ontology#0001"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#FnaticVsOrigenLCS2015"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#GardenTerror -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#GardenTerror">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#GiantSlayer -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#GiantSlayer">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#GraveGolem -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#GraveGolem">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Gromp -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Gromp">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#HeroesOfTheStorm -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#HeroesOfTheStorm">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Game"/>
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#eSport"/>
+        <VideoGameOntology:hasCharacter rdf:resource="http://www.theesportslov.org/eSports-ontology#Auriel"/>
+        <VideoGameOntology:hasCharacter rdf:resource="http://www.theesportslov.org/eSports-ontology#Ragnaros"/>
+        <VideoGameOntology:hasCharacter rdf:resource="http://www.theesportslov.org/eSports-ontology#Varian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Huni -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Huni">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <VideoGameOntology:playsGame rdf:resource="http://www.theesportslov.org/eSports-ontology#LeagueOfLegends"/>
+        <hasPlayerRole rdf:resource="http://www.theesportslov.org/eSports-ontology#Toplaner"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#FnaticLOL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Immortal -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Immortal">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#InfinityEdge -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#InfinityEdge">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Item"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Irelia -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Irelia">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Janna -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Janna">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Jhin -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Jhin">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Jungler -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Jungler">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#PlayerRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#KillBaron -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#KillBaron">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#GainEvent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#KillDragon -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#KillDragon">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#GainEvent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Krug -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Krug">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#LCS2015 -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#LCS2015">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#League"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#LCS2015FirstRound -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#LCS2015FirstRound">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Round"/>
+        <hasNextRound rdf:resource="http://www.theesportslov.org/eSports-ontology#LCS2015SecondRound"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#LCS2015GroupPhase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#LCS2015GroupPhase -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#LCS2015GroupPhase">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#GroupBracket"/>
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#lastStage"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#LCS2015"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#LCS2015SecondRound -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#LCS2015SecondRound">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Round"/>
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#lastRound"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#LCS2015GroupPhase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#LeagueOfLegends -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#LeagueOfLegends">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Game"/>
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#eSport"/>
+        <VideoGameOntology:hasCharacter rdf:resource="http://www.theesportslov.org/eSports-ontology#Ezreal"/>
+        <VideoGameOntology:hasCharacter rdf:resource="http://www.theesportslov.org/eSports-ontology#Lux"/>
+        <VideoGameOntology:hasCharacter rdf:resource="http://www.theesportslov.org/eSports-ontology#Zyra"/>
+        <VideoGameOntology:hasGameGenre rdf:resource="http://www.theesportslov.org/eSports-ontology#TowerDefense"/>
+        <hasEvent rdf:resource="http://www.theesportslov.org/eSports-ontology#LCS2015"/>
+        <has_map rdf:resource="http://www.theesportslov.org/eSports-ontology#Abyss"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Leoric -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Leoric">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Lux -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Lux">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Malfurion -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Malfurion">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Marksman -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Marksman">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#ChampionRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#MeleeMinion -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#MeleeMinion">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Minions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Mid -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Mid">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Lane"/>
+        <isPartOfMap rdf:resource="http://www.theesportslov.org/eSports-ontology#Abyss"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Midcarry -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Midcarry">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#ChampionRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Midlaner -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Midlaner">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#PlayerRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Mithy -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Mithy">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <VideoGameOntology:playsGame rdf:resource="http://www.theesportslov.org/eSports-ontology#LeagueOfLegends"/>
+        <hasPlayerRole rdf:resource="http://www.theesportslov.org/eSports-ontology#SupportBotlaner"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#OrigenLOL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Morgana -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Morgana">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Murky -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Murky">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Niels -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Niels">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <VideoGameOntology:playsGame rdf:resource="http://www.theesportslov.org/eSports-ontology#LeagueOfLegends"/>
+        <hasPlayerRole rdf:resource="http://www.theesportslov.org/eSports-ontology#ADCarry"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#OrigenLOL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Nunu -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Nunu">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Olaf -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Olaf">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Origen -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Origen">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#eSportsClub"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#OrigenLOL -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#OrigenLOL">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Team"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#Origen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Pantheon -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Pantheon">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Poppy -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Poppy">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Punisher -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Punisher">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Ragnaros -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Ragnaros">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Rammus -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Rammus">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#RangedMinion -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#RangedMinion">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Minions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Raptor -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Raptor">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Rehgar -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Rehgar">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Reignover -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Reignover">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <VideoGameOntology:playsGame rdf:resource="http://www.theesportslov.org/eSports-ontology#LeagueOfLegends"/>
+        <hasPlayerRole rdf:resource="http://www.theesportslov.org/eSports-ontology#Jungler"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#FnaticLOL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Rekkles -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Rekkles">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <VideoGameOntology:playsGame rdf:resource="http://www.theesportslov.org/eSports-ontology#LeagueOfLegends"/>
+        <hasPlayerRole rdf:resource="http://www.theesportslov.org/eSports-ontology#ADCarry"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#FnaticLOL"/>
+        <VideoGameOntology:username rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FNC Rekkles</VideoGameOntology:username>
+        <kdaRatio rdf:datatype="http://www.w3.org/2001/XMLSchema#float">11.0</kdaRatio>
+        <foaf:birthday rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1996-09-20T21:32:52</foaf:birthday>
+        <foaf:name>Martin Larsson</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Shambler -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Shambler">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#SiegeMinion -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#SiegeMinion">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Minions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#SkyTemple -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#SkyTemple">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Map5v5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#SoaZ -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#SoaZ">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <VideoGameOntology:playsGame rdf:resource="http://www.theesportslov.org/eSports-ontology#LeagueOfLegends"/>
+        <hasPlayerRole rdf:resource="http://www.theesportslov.org/eSports-ontology#Toplaner"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#OrigenLOL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#SummonersRift -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#SummonersRift">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Map5v5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#SuperMinion -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#SuperMinion">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Minions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Support -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Support">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#ChampionRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#SupportBotlaner -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#SupportBotlaner">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#PlayerRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#TakeTower -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#TakeTower">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#GainEvent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Tank -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Tank">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#ChampionRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Thrall -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Thrall">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Top -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Top">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Lane"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Toplaner -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Toplaner">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#PlayerRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#TowerDefense -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#TowerDefense">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Genre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#TowersOfDoom -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#TowersOfDoom">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Map5v5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Tracer -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Tracer">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#TwistedTreeline -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#TwistedTreeline">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Map3v3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Tyrande -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Tyrande">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Valla -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Valla">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Varian -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Varian">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#WarheadJunction -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#WarheadJunction">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Map5v5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Warrior -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Warrior">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#ChampionRole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Webweaver -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Webweaver">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Monsters"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Wizard -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Wizard">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Minions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#X_Team -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#X_Team">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Team"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Xattie -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Xattie">
+        <VideoGameOntology:playsGame rdf:resource="http://www.theesportslov.org/eSports-ontology#HeroesOfTheStorm"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#X_Team"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#YellowStar -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#YellowStar">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <VideoGameOntology:playsGame rdf:resource="http://www.theesportslov.org/eSports-ontology#LeagueOfLegends"/>
+        <hasPlayerRole rdf:resource="http://www.theesportslov.org/eSports-ontology#SupportBotlaner"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#FnaticLOL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#Zyra -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#Zyra">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#Champion"/>
+        <has_ChampionRole rdf:resource="http://www.theesportslov.org/eSports-ontology#Support"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#results0001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#results0001">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Leaderboard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#stats0001_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#stats0001_1">
+        <rdf:type rdf:resource="http://www.w3.org/2006/time#PlayerGameStats"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#xPeke -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#xPeke">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Player"/>
+        <VideoGameOntology:playsGame rdf:resource="http://www.theesportslov.org/eSports-ontology#LeagueOfLegends"/>
+        <hasPlayerRole rdf:resource="http://www.theesportslov.org/eSports-ontology#Midlaner"/>
+        <partOf rdf:resource="http://www.theesportslov.org/eSports-ontology#OrigenLOL"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#0001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#0001">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Session"/>
+        <hasSessionPlayingArea rdf:resource="http://www.theesportslov.org/eSports-ontology#SummonersRift"/>
+        <involvesCharacterPlayerRelation rdf:resource="http://www.theesportslov.org/eSports-ontology#0001_1"/>
+        <time:hasSessionLeaderboard rdf:resource="http://www.theesportslov.org/eSports-ontology#results0001"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#0001_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#0001_1">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation"/>
+        <involvesCharacter rdf:resource="http://www.theesportslov.org/eSports-ontology#Ezreal"/>
+        <involvesPlayer rdf:resource="http://www.theesportslov.org/eSports-ontology#Rekkles"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#0002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#0002">
+        <rdf:type rdf:resource="http://purl.org/net/VideoGameOntology#Session"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.theesportslov.org/eSports-ontology#0002_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.theesportslov.org/eSports-ontology#0002_1">
+        <rdf:type rdf:resource="http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation"/>
+        <involvesCharacter rdf:resource="http://www.theesportslov.org/eSports-ontology#Varian"/>
+        <involvesPlayer rdf:resource="http://www.theesportslov.org/eSports-ontology#Xattie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/PopulatedPlace"/>
+            <rdf:Description rdf:about="http://purl.org/NET/c4dm/event.owl#Event"/>
+            <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#Feature"/>
+            <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#Game"/>
+            <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#Genre"/>
+            <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#InstantaneousEvent"/>
+            <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#Item"/>
+            <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#Leaderboard"/>
+            <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#PlayingArea"/>
+            <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#Session"/>
+            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#ChampionRole"/>
+            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#CharacterPlayerRelation"/>
+            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#Lane"/>
+            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#PlayerRole"/>
+            <rdf:Description rdf:about="http://www.w3.org/2006/time#PlayerGameStats"/>
+            <rdf:Description rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#GameEvent"/>
+            <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#MenuEvent"/>
+            <rdf:Description rdf:about="http://purl.org/net/VideoGameOntology#PlayerEvent"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#Bo1Match"/>
+            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#Bo3Match"/>
+            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#Bo5Match"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#Map1v1"/>
+            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#Map3v3"/>
+            <rdf:Description rdf:about="http://www.theesportslov.org/eSports-ontology#Map5v5"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Group"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Organization"/>
+            <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
